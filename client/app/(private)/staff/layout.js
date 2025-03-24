@@ -1,11 +1,24 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigationItems = [
-  { path: "/staff/profile", label: "My Profile" },
+  {
+    path: "/staff/profile",
+    image: (
+      <Image src="/Male User.png" alt="User icon" width={18} height={18} />
+    ),
+    label: "My Profile",
+  },
   { path: "/staff/members", label: "Members" },
   { path: "/staff/teachers", label: "Teacher Enrollment" },
-  { path: "/staff/classes", label: "Classes" },
+  {
+    path: "/staff/classes",
+    image: (
+      <Image src="/Edit Property.png" alt="Edit icon" width={18} height={18} />
+    ),
+    label: "Classes",
+  },
   { path: "/staff/teachers/registrations", label: "Teacher Registration" },
 ];
 
@@ -31,7 +44,7 @@ export default function StaffLayout({ children }) {
                 className={`text-lg focus:text-neutral-content focus:bg-neutral`}
                 href={item.path}
               >
-                {item.label}
+                {item.image} {item.label}
               </Link>
             </li>
           ))}

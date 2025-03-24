@@ -1,12 +1,48 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigationItems = [
-  { path: "/teacher/information", label: "Personal Information" },
-  { path: "/teacher/regular", label: "Regular Classes" },
-  { path: "/teacher/pop-up", label: "Pop Up Classes" },
-  { path: "/teacher/workshop", label: "Workshop Classes" },
-  { path: "/teacher/showcase", label: "Showcase Classes" },
+  {
+    path: "/teacher/information",
+    image: (
+      <Image src="/Male User.png" alt="User icon" width={18} height={18} />
+    ),
+    label: "Personal Information",
+  },
+  {
+    path: "/teacher/regular",
+    image: (
+      <Image src="/Edit Property.png" alt="Edit icon" width={18} height={18} />
+    ),
+    label: "Regular Classes",
+  },
+  {
+    path: "/teacher/pop-up",
+    image: (
+      <Image src="/Edit Property.png" alt="Edit icon" width={18} height={18} />
+    ),
+    label: "Pop Up Classes",
+  },
+  {
+    path: "/teacher/workshop",
+    image: (
+      <Image src="/Edit Property.png" alt="Edit icon" width={18} height={18} />
+    ),
+    label: "Workshop Classes",
+  },
+  {
+    path: "/teacher/showcase",
+    image: (
+      <Image src="/Edit Property.png" alt="Edit icon" width={18} height={18} />
+    ),
+    label: "Showcase Classes",
+  },
+  {
+    path: "/teacher/orders",
+    image: <Image src="/Buy.png" alt="Buy icon" width={18} height={18} />,
+    label: "Purchase History",
+  },
 ];
 
 export default function TeacherLayout({ children }) {
@@ -31,7 +67,7 @@ export default function TeacherLayout({ children }) {
                 className={`text-lg focus:text-neutral-content focus:bg-neutral`}
                 href={item.path}
               >
-                {item.label}
+                {item.image} {item.label}
               </Link>
             </li>
           ))}

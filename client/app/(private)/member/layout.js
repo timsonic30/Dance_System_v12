@@ -1,11 +1,37 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigationItems = [
-  { path: "/member/information", label: "Personal Information" },
-  { path: "/member/classes", label: "Scheduled Classes" },
-  { path: "/member/orders", label: "Purchase History" },
-  { path: "/member/points", label: "Points Redemption" },
+  {
+    path: "/member/information",
+    image: (
+      <Image src="/Male User.png" alt="User icon" width={18} height={18} />
+    ),
+    label: "Personal Information",
+  },
+  {
+    path: "/member/classes",
+    image: (
+      <Image
+        src="/Event Accepted.png"
+        alt="Accepted icon"
+        width={18}
+        height={18}
+      />
+    ),
+    label: "Scheduled Classes",
+  },
+  {
+    path: "/member/orders",
+    image: <Image src="/Buy.png" alt="Buy icon" width={18} height={18} />,
+    label: "Purchase History",
+  },
+  {
+    path: "/member/points",
+    image: <Image src="/Prize.png" alt="Prize icon" width={18} height={18} />,
+    label: "Points Redemption",
+  },
 ];
 
 export default function MemberLayout({ children }) {
@@ -30,7 +56,7 @@ export default function MemberLayout({ children }) {
                 className={`text-lg focus:text-neutral-content focus:bg-neutral`}
                 href={item.path}
               >
-                {item.label}
+                {item.image} {item.label}
               </Link>
             </li>
           ))}
